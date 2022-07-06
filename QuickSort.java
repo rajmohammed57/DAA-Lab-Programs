@@ -57,3 +57,6 @@ void printArr(int a[], int n)
     System.out.println();  
     }  
 }  
+
+
+// Best case: O(n*logn) , Average Case: O(n*logn), Worst Case: O(n2)
