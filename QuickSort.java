@@ -1,4 +1,4 @@
-public class QuickSort 
+public class QuickSort2 
 {  
     /* function that consider last element as pivot,  
 place the pivot at its exact position, and place  
@@ -45,18 +45,21 @@ void printArr(int a[], int n)
     for (i = 0; i < n; i++)  
         System.out.print(a[i] + " ");  
 }  
-    public static void main(String[] args) {  
-    int a[] = { 13, 18, 27, 2, 19, 25 };  
-    int n = a.length;  
+    public static void main(String[] args) { 
+    int n = 3000;
+    int a[] = new int[n];
+    for(int i=0;i<n;i++)
+        a[i] = (int)(Math.random()*1000);
+      
     System.out.println("\nBefore sorting array elements are - ");  
-    QuickSort q1 = new QuickSort();  
+    QuickSort2 q1 = new QuickSort2();  
     q1.printArr(a, n);  
-    q1.quick(a, 0, n - 1);  
+    long start = System.currentTimeMillis();
+    q1.quick(a, 0, n - 1);
+    long end = System.currentTimeMillis();
     System.out.println("\nAfter sorting array elements are - ");  
     q1.printArr(a, n);  
-    System.out.println();  
+    System.out.println();
+    System.out.println("\nTime Elapsed: "+(end-start)+" ms");
     }  
 }  
-
-
-// Best case: O(n*logn) , Average Case: O(n*logn), Worst Case: O(n2)
