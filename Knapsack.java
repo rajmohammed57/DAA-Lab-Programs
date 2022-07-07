@@ -59,4 +59,4 @@ public class Knapsack {
 
 }
 
-// Time Complexity: 
+// Time Complexity: O(N*W) where N denotes number of items available and W denotes the capacity of the knapsack
