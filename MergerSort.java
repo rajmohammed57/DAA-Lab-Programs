@@ -13,9 +13,9 @@ void merge(int a[], int beg, int mid, int end)
       
     /* copy data to temp arrays */  
     for (i = 0; i < n1; i++)    
-    LeftArray[i] = a[beg + i];    
+        LeftArray[i] = a[beg + i];    
     for (j = 0; j < n2; j++)    
-    RightArray[j] = a[mid + 1 + j];    
+        RightArray[j] = a[mid + 1 + j];    
       
     i = 0; /* initial index of first sub-array */  
     j = 0; /* initial index of second sub-array */   
@@ -70,16 +70,21 @@ void printArray(int a[], int n)
 }  
   
 public static void main(String args[])  
-{  
-    int a[] = { 11, 30, 24, 7, 31, 16, 39, 41 };  
-    int n = a.length;  
+{   
+    int n = 100;
+    int a[] = new int[n];
+    for(int i=0;i<n;i++)
+        a[i] = (int)(Math.random()*1000);
     Merge_Sort m1 = new Merge_Sort();  
     System.out.println("\nBefore sorting array elements are - ");  
     m1.printArray(a, n);  
-    m1.mergeSort(a, 0, n - 1);  
+    long start = System.currentTimeMillis();
+    m1.mergeSort(a, 0, n - 1); 
+    long end = System.currentTimeMillis();
     System.out.println("\nAfter sorting array elements are - ");  
     m1.printArray(a, n);  
-    System.out.println("");  
+    System.out.println(""); 
+    System.out.println("\nTime Elapsed: "+(end-start)+" ms");
 }  
   
   }
